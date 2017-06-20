@@ -1,5 +1,6 @@
 package com.niit.collaboration.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,13 +23,13 @@ public class BlogComment extends BaseDomain {
 	
 	@Id
 	//@GeneratedValue(strategy=GenerationType.AUTO)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="blog_comm_sqe")
-	@SequenceGenerator(name="blog_comm_sqe", sequenceName="blog_comm_sqe", allocationSize=1)
-	@Column(name="ID")
-	private int id;
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="blog_comm_sqe")
+	//@SequenceGenerator(name="blog_comm_sqe", sequenceName="blog_comm_sqe", allocationSize=1)
+
+	private BigDecimal id;
 	
-	@Column(name="BLOG_ID")
-	private int blog_id;
+	
+	private String blog_id;
 	
 	
 	private String user_id;
@@ -37,19 +38,23 @@ public class BlogComment extends BaseDomain {
 	
 	private Date comment_date;
 
-	public int getId() {
+	
+
+	
+
+	public BigDecimal getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(BigDecimal id) {
 		this.id = id;
 	}
 
-	public int getBlog_id() {
+	public String getBlog_id() {
 		return blog_id;
 	}
 
-	public void setBlog_id(int blog_id) {
+	public void setBlog_id(String blog_id) {
 		this.blog_id = blog_id;
 	}
 

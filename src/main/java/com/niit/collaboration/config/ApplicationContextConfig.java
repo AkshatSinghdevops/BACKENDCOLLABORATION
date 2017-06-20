@@ -19,6 +19,8 @@ import com.niit.collaboration.model.BlogComment;
 import com.niit.collaboration.model.Chat;
 import com.niit.collaboration.model.Forum;
 import com.niit.collaboration.model.Friend;
+import com.niit.collaboration.model.Job;
+import com.niit.collaboration.model.JobApplication;
 import com.niit.collaboration.model.User;
 
 @Configuration
@@ -56,7 +58,8 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClasses(Forum.class);
 	    sessionBuilder.addAnnotatedClasses(Friend.class);
 	    sessionBuilder.addAnnotatedClasses(Chat.class);
-	    
+	    sessionBuilder.addAnnotatedClasses(Job.class);
+	    sessionBuilder.addAnnotatedClasses(JobApplication.class);
 	    return sessionBuilder.buildSessionFactory();
 }
 	

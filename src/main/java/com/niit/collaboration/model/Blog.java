@@ -28,7 +28,7 @@ public class Blog extends BaseDomain
 	
 	private int blog_like;
 
-	
+	private String description;
 
 	public BigDecimal getId() {
 		return id;
@@ -76,6 +76,14 @@ public class Blog extends BaseDomain
 
 	public void setBlog_like(int blog_like) {
 		this.blog_like = blog_like;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

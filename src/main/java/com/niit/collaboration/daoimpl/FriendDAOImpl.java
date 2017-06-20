@@ -152,12 +152,12 @@ public class FriendDAOImpl implements FriendDAO {
 	}
 	
 	@Transactional
-public List<Friend> getFriendsRequestsSendByMe(String friendid)
-{
+    public List<Friend> getFriendsRequestsSendByMe(String friendid)
+    {
 	String hql="select f.status  from Friend f where friend_id=' "+friendid+"'";
 	Query query=sessionFactory.getCurrentSession().createQuery(hql);
 	return query.list();
-}
+    }
 	
 
 }

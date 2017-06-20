@@ -20,13 +20,13 @@ public class User extends BaseDomain
 	@Id
 	private String id;
 	
-    private String username;
+    private String name;
 	
 	private String password;
 	
 	private String address;
 	
-	private String mail;
+	private String email;
 	
 	private String mobile;
 	
@@ -40,7 +40,7 @@ public class User extends BaseDomain
 	
 	private char isonline;
 	
-	private BLOB image;
+	
 
 	public String getId() {
 		return id;
@@ -50,12 +50,12 @@ public class User extends BaseDomain
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPassword() {
@@ -74,12 +74,12 @@ public class User extends BaseDomain
 		this.address = address;
 	}
 
-	public String getMail() {
-		return mail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getMobile() {
@@ -132,13 +132,7 @@ public class User extends BaseDomain
 		this.isonline = isonline;
 	}
 
-	public BLOB getImage() {
-		return image;
-	}
-
-	public void setImage(BLOB image) {
-		this.image = image;
-	}
+	
 
 	
 	

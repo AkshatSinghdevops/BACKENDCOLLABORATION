@@ -1,5 +1,6 @@
 package com.niit.collaboration.testcase;
 
+import java.io.IOException;
 import java.util.Date;
 
 import org.junit.BeforeClass;
@@ -14,17 +15,19 @@ import junit.framework.Assert;
 
 public class BlogCommentTestCase {
 
+
+
 	@Autowired
 	private static BlogComment blogcomment;
 
 	@Autowired
-	private static BlogCommentDAO  blogcommentDAO;
+	private static BlogCommentDAO blogcommentDAO;
 
 	
 	@BeforeClass
 	public static void init() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit.collaboration");
+		context.scan("com.niit");
 		context.refresh();
 
 		blogcomment = (BlogComment) context.getBean("blogcomment");
@@ -34,14 +37,13 @@ public class BlogCommentTestCase {
 	}
 	
 	
-	   @Test
-       public void createBlogCommentTestCase()  {
+	@Test
+	public void createChatTestCase() throws IOException {
 
 		
+		
 		blogcomment.setUser_id("niit");
-		blogcomment.setBlog_id(2);
-		blogcomment.setComment_date(new Date());
-		blogcomment.setBlog_comment("this is comment in blog");
+		
 		
 
 		boolean flag = blogcommentDAO.save(blogcomment);
@@ -49,7 +51,12 @@ public class BlogCommentTestCase {
 		// compare what you are excepting VS what you are getting from save
 		// method
 
-		Assert.assertEquals("createBlogCommentTestCase", true, flag);
+		Assert.assertEquals("createChatTestCase", true, flag);
 
 	}
+
+
+
+
+
 }

@@ -3,6 +3,7 @@ package com.niit.collaboration.daoimpl;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,18 +20,17 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
 	  @Autowired
 	  SessionFactory sessionFactory;
 	
-	
-	/*private Session getSession()
+	  @Transactional
+	private Session getSession()
 	{
 		return sessionFactory.getCurrentSession();
-	}*/
-	  
+	}
+	
 	  public BlogCommentDAOImpl(SessionFactory sessionFactory)
 		{
 			this.sessionFactory = sessionFactory;
 		}
 	
-	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<BlogComment> list() {
 		String hql = "from BlogComment";
@@ -50,6 +50,12 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
 	public boolean delete(BlogComment blogcomment) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Transactional
+	public List<BlogComment> commentlist(String user_id) {
+		String hql="from BlogComment b where b.user_id="+"'"+user_id+"'";
+		Query query=sessionFactory.openSession().createQuery(hql);
+        return query.list();
 	}
 
 }

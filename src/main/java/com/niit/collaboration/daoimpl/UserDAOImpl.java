@@ -52,8 +52,28 @@ public class UserDAOImpl implements UserDAO {
 	@Transactional
 	public boolean save(User user) {
 		try {
-			sessionFactory.getCurrentSession().save(user);
+			System.out.println("inside save");
+			System.out.println("id is "+user.getName());
+			
+			Query query=sessionFactory.getCurrentSession().createSQLQuery("select c_blog_sequence.nextval from dual ");
+       String i=query.list().get(0).toString();
+		//System.out.println("i is"+i);
+		if(user==null)
+		{
+			System.out.println("user is null");
+		}
+		else
+		{
+			System.out.println(user.getId()+","+user.getName());
+			
+		}
+		user.setId(user.getName());
+		user.setRole("Student");
+			Session session=sessionFactory.getCurrentSession();
+			session.save(user);
+			session.flush();
 		} catch (Exception e) {
+			System.out.println(e);
 			return false;
 		}
 		return true;

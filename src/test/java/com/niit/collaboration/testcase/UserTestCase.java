@@ -1,6 +1,10 @@
 package com.niit.collaboration.testcase;
 
 
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,21 +51,21 @@ public class UserTestCase {
 	   //Assert.assertEquals("getuserdetails", true, flag);		
 	//}
 	
-	/*@Test
-	public void createUserTestCase() throws IOException {
+	@Test
+	public void createUserTestCase()  {
 
 		
-		user.setId("niit");
-		user.setUsername("niit");
-		user.setPassword("niit");
-		user.setAddress("E3/253 Arera Colony,Bhopal");
-		user.setMail("niit@gmail.com");
-		user.setMobile("94949494949");
-		user.setRole("Role_Admin");
+	    user.setId("akshat");
+		user.setName("akshat");
+		user.setPassword("akshat");
+		user.setAddress("Arera Bhopal");
+		user.setEmail("akshat@gmail.com");
+		user.setMobile("1234567895");
+		user.setRole("Admin");
 		user.setDob("12/12/1999");
 		user.setIsonline('Y');
-		user.setGender("Mail");
-		
+		user.setGender("male");
+		user.setStatus('A');
 		
 		
 
@@ -71,8 +75,8 @@ public class UserTestCase {
 		// method
 
 		Assert.assertEquals("createUserTestCase", true, flag);
-
-	}*/
+        // assertEquals("createUserTestCase", true, flag);
+	}
 }
 	
 	

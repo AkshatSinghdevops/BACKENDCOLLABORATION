@@ -13,5 +13,8 @@ public interface BlogCommentDAO {
 	public boolean save(BlogComment blogcomment);
 	
 	public boolean delete(BlogComment blogcomment);
+	
+	
+	public List<BlogComment> commentlist(String user_id);
 
 }
